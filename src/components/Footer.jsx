@@ -17,7 +17,8 @@ const item = {
 
 export default function Footer() {
   return (
-    <footer className="bg-gradient-to-b from-gray-900 to-black text-white px-6 py-12 mt-20">
+    <footer className="bg-gradient-to-b from-gray-900 to-black text-white px-6 py-12 !mt-0">
+
       <motion.div
         className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12"
         variants={container}
@@ -66,14 +67,14 @@ export default function Footer() {
               <Github size={28} />
             </motion.a>
             <motion.a
-              href="#"
+              href="https://github.com/adeel4166"
               whileHover={{ scale: 1.2, color: "#818cf8" }}
               transition={{ type: "spring", stiffness: 300 }}
             >
               <Linkedin size={28} />
             </motion.a>
             <motion.a
-              href="#"
+              href="https://www.linkedin.com/in/adeel-ahmad-639b852ab"
               whileHover={{ scale: 1.2, color: "#818cf8" }}
               transition={{ type: "spring", stiffness: 300 }}
             >
@@ -92,6 +93,7 @@ export default function Footer() {
       >
         © {new Date().getFullYear()} Adeel Portfolio. All Rights Reserved.
       </motion.div>
+      
     </footer>
   );
 }

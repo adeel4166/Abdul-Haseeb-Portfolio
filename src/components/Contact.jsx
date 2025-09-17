@@ -75,14 +75,14 @@ export default function Contact() {
               <Github size={28} />
             </motion.a>
             <motion.a
-              href="#"
+              href="https://github.com/adeel4166"
               className="hover:text-indigo-400 transition transform hover:scale-110"
               variants={item}
             >
               <Linkedin size={28} />
             </motion.a>
             <motion.a
-              href="#"
+              href="https://www.linkedin.com/in/adeel-ahmad-639b852ab"
               className="hover:text-indigo-400 transition transform hover:scale-110"
               variants={item}
             >

@@ -68,21 +68,21 @@ export default function Contact() {
             variants={container}
           >
             <motion.a
-              href="#"
+              href="https://github.com/adeel4166"
               className="hover:text-indigo-400 transition transform hover:scale-110"
               variants={item}
             >
               <Github size={28} />
             </motion.a>
             <motion.a
-              href="https://github.com/adeel4166"
+              href="https://www.linkedin.com/in/adeel-ahmad-639b852ab"
               className="hover:text-indigo-400 transition transform hover:scale-110"
               variants={item}
             >
               <Linkedin size={28} />
             </motion.a>
             <motion.a
-              href="https://www.linkedin.com/in/adeel-ahmad-639b852ab"
+              href="#"
               className="hover:text-indigo-400 transition transform hover:scale-110"
               variants={item}
             >

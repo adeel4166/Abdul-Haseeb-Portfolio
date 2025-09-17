@@ -60,10 +60,7 @@ export default function Hero() {
         </motion.h1>
 
         {/* Subtitle */}
-        <motion.p
-          className="text-lg text-gray-300 max-w-xl"
-          variants={item}
-        >
+        <motion.p className="text-lg text-gray-300 max-w-xl" variants={item}>
           A passionate{" "}
           <span className="text-indigo-400">Python Web Developer</span>,{" "}
           <span className="text-purple-400">Flutter Enthusiast</span> and{" "}
@@ -93,17 +90,6 @@ export default function Hero() {
             📩 Contact Me
           </motion.a>
         </motion.div>
-
-        {/* Features */}
-        <motion.ul
-          className="grid grid-cols-2 gap-4 mt-6 text-gray-400 text-sm"
-          variants={container}
-        >
-          <motion.li variants={item}>⚡ Fast & Responsive</motion.li>
-          <motion.li variants={item}>🎨 Customizable UI</motion.li>
-          <motion.li variants={item}>🌙 Dark Mode</motion.li>
-          <motion.li variants={item}>🔒 Secure & Scalable</motion.li>
-        </motion.ul>
       </motion.div>
 
       {/* Right Image */}

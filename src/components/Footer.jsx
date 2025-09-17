@@ -60,21 +60,21 @@ export default function Footer() {
           <h3 className="font-semibold text-lg">Connect With Me</h3>
           <div className="flex space-x-6">
             <motion.a
-              href="#"
+              href="https://github.com/adeel4166"
               whileHover={{ scale: 1.2, color: "#818cf8" }}
               transition={{ type: "spring", stiffness: 300 }}
             >
               <Github size={28} />
             </motion.a>
             <motion.a
-              href="https://github.com/adeel4166"
+              href="https://www.linkedin.com/in/adeel-ahmad-639b852ab"
               whileHover={{ scale: 1.2, color: "#818cf8" }}
               transition={{ type: "spring", stiffness: 300 }}
             >
               <Linkedin size={28} />
             </motion.a>
             <motion.a
-              href="https://www.linkedin.com/in/adeel-ahmad-639b852ab"
+              href="#"
               whileHover={{ scale: 1.2, color: "#818cf8" }}
               transition={{ type: "spring", stiffness: 300 }}
             >

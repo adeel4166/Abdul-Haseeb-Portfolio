@@ -100,7 +100,7 @@ export default function Hero() {
         transition={{ duration: 1, delay: 0.5, type: "spring" }}
       >
         <img
-          src="Profile.jpg" // apni profile image ka path do
+          src="Profile.jpeg" // apni profile image ka path do
           alt="Profile"
           className="w-64 h-64 md:w-80 md:h-80 rounded-full object-cover shadow-[0_0_30px_rgba(139,92,246,0.6)]"
         />

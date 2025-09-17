@@ -50,11 +50,11 @@ export default function Contact() {
           <div className="space-y-4">
             <motion.div className="flex items-center space-x-3" variants={item}>
               <Mail className="text-indigo-400" />
-              <span>yourname@email.com</span>
+              <span>adeelkhan4128@gmail.com</span>
             </motion.div>
             <motion.div className="flex items-center space-x-3" variants={item}>
               <Phone className="text-indigo-400" />
-              <span>+92 300 1234567</span>
+              <span>+92 3004166107</span>
             </motion.div>
             <motion.div className="flex items-center space-x-3" variants={item}>
               <MapPin className="text-indigo-400" />

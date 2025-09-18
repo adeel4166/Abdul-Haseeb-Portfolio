@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { motion } from "framer-motion";
 
@@ -15,7 +16,7 @@ const item = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
 };
 
-export default function Hero() {
+export default function Hero({ setActiveSection }) {
   const titleWords = ["Hi,", "I’m", "Adeel", "Ahmad"];
 
   return (
@@ -33,7 +34,7 @@ export default function Hero() {
       >
         {/* Badge */}
         <motion.span
-          className="px-4 py-1 bg-indigo-500/20 text-indigo-400 text-sm font-medium rounded-full"
+          className="px-4 py-1 bg-indigo-500/20 text-indigo-400 text-sm font-[Poppins] font-medium rounded-full"
           variants={item}
         >
           ✨ Available for Work
@@ -41,7 +42,7 @@ export default function Hero() {
 
         {/* Staggered Title */}
         <motion.h1
-          className="text-4xl sm:text-6xl font-extrabold leading-tight flex flex-wrap justify-center md:justify-start gap-2"
+          className="text-4xl sm:text-6xl font-extrabold leading-tight flex flex-wrap justify-center md:justify-start gap-2 font-[Cinzel]"
           variants={container}
         >
           {titleWords.map((word, i) => (
@@ -60,7 +61,10 @@ export default function Hero() {
         </motion.h1>
 
         {/* Subtitle */}
-        <motion.p className="text-lg text-gray-300 max-w-xl" variants={item}>
+        <motion.p
+          className="text-lg text-gray-300 max-w-xl font-[Inter]"
+          variants={item}
+        >
           A passionate{" "}
           <span className="text-indigo-400">Python Web Developer</span>,{" "}
           <span className="text-purple-400">Flutter Enthusiast</span> and{" "}
@@ -73,21 +77,39 @@ export default function Hero() {
           className="flex flex-wrap justify-center md:justify-start gap-4"
           variants={container}
         >
+          {/* View Projects */}
           <motion.a
             href="#projects"
+            onClick={() => setActiveSection("projects")}
             className="px-6 py-3 bg-gradient-to-r from-indigo-500 via-purple-600 to-pink-600 
-            text-white rounded-lg font-medium shadow-md transition-transform hover:scale-105 hover:shadow-lg"
+            text-white rounded-lg font-[Poppins] font-medium shadow-md transition-transform 
+            hover:scale-105 hover:shadow-lg"
             variants={item}
           >
             🚀 View Projects
           </motion.a>
+
+          {/* Contact Me */}
           <motion.a
             href="#contact"
+            onClick={() => setActiveSection("contact")}
             className="px-6 py-3 border border-indigo-500 text-indigo-400 rounded-lg 
-            font-medium hover:bg-indigo-500 hover:text-white hover:scale-105 transition-all"
+            font-[Poppins] font-medium hover:bg-indigo-500 hover:text-white hover:scale-105 transition-all"
             variants={item}
           >
             📩 Contact Me
+          </motion.a>
+
+          {/* Download Resume */}
+          <motion.a
+            href="/Resume.pdf" // ✅ apni resume file public folder me daal kar path adjust karo
+            download
+            className="px-6 py-3 bg-gradient-to-r from-green-400 via-emerald-500 to-teal-500 
+            text-white rounded-lg font-[Poppins] font-medium shadow-md transition-transform 
+            hover:scale-105 hover:shadow-lg"
+            variants={item}
+          >
+            📄 Download Resume
           </motion.a>
         </motion.div>
       </motion.div>
@@ -100,9 +122,10 @@ export default function Hero() {
         transition={{ duration: 1, delay: 0.5, type: "spring" }}
       >
         <img
-          src="Profile.jpeg" // apni profile image ka path do
+          src="Profile.jpeg" // ✅ apni profile image ka path do
           alt="Profile"
-          className="w-64 h-64 md:w-80 md:h-80 rounded-full object-cover shadow-[0_0_30px_rgba(139,92,246,0.6)]"
+          className="w-64 h-64 md:w-80 md:h-80 rounded-full object-cover 
+          shadow-[0_0_30px_rgba(139,92,246,0.6)]"
         />
       </motion.div>
     </section>

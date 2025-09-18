@@ -36,12 +36,12 @@ export default function Navbar({ setActiveSection }) {
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6">
         {/* Logo */}
-        <h1 className="text-2xl font-extrabold tracking-tight text-white">
+        <h1 className="text-2xl font-extrabold tracking-tight text-white font-[Cinzel]">
           <span className="text-indigo-500">Adeel</span> Portfolio
         </h1>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex space-x-8 font-medium">
+        <nav className="hidden md:flex space-x-8 font-[Poppins] text-base">
           {links.map((item) => (
             <button
               key={item.value}
@@ -68,12 +68,13 @@ export default function Navbar({ setActiveSection }) {
         {/* CTA */}
         <button
           onClick={() => handleClick("contact")}
-          className="hidden md:inline-block px-5 py-2 bg-gradient-to-r from-indigo-500 via-purple-600 to-pink-600 text-white font-medium rounded-lg shadow-md transition-all duration-300 hover:scale-105 hover:shadow-lg"
+          className="hidden md:inline-block px-5 py-2 bg-gradient-to-r from-indigo-500 via-purple-600 to-pink-600 
+          text-white font-[Poppins] font-medium rounded-lg shadow-md transition-all duration-300 hover:scale-105 hover:shadow-lg"
         >
           Hire Me
         </button>
 
-        {/* Mobile Menu */}
+        {/* Mobile Menu Button */}
         <button
           onClick={() => setMobileMenu(true)}
           className="md:hidden text-white p-2"
@@ -84,7 +85,7 @@ export default function Navbar({ setActiveSection }) {
 
       {/* Mobile Drawer */}
       {mobileMenu && (
-        <div className="fixed top-0 right-0 h-full w-64 bg-gray-900 text-white shadow-2xl p-6">
+        <div className="fixed top-0 right-0 h-full w-64 bg-gray-900 text-white shadow-2xl p-6 font-[Poppins]">
           <div className="flex justify-between items-center mb-6">
             <h2 className="text-lg font-semibold">Menu</h2>
             <button onClick={() => setMobileMenu(false)}>

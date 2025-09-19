@@ -1,13 +1,16 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
+import { FaUnity, FaGithub, FaCode } from "react-icons/fa";
+import { SiDotnet, SiFirebase } from "react-icons/si";
+import { MdAnimation } from "react-icons/md";
+import { GiLightningFrequency } from "react-icons/gi";
 
-// Variants for staggered animation
 const container = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: { staggerChildren: 0.15 }, // delay between words
+    transition: { staggerChildren: 0.15 },
   },
 };
 
@@ -17,7 +20,7 @@ const item = {
 };
 
 export default function Hero({ setActiveSection }) {
-  const titleWords = ["Hi,", "I’m", "Adeel", "Ahmad"];
+  const titleWords = ["Hi,", "I’m", "Abdul", "Haseeb"];
 
   return (
     <section
@@ -37,7 +40,7 @@ export default function Hero({ setActiveSection }) {
           className="px-4 py-1 bg-indigo-500/20 text-indigo-400 text-sm font-[Poppins] font-medium rounded-full"
           variants={item}
         >
-          ✨ Available for Work
+          🎮 Game Developer
         </motion.span>
 
         {/* Staggered Title */}
@@ -50,7 +53,7 @@ export default function Hero({ setActiveSection }) {
               key={i}
               variants={item}
               className={
-                word === "Adeel" || word === "Ahmad"
+                word === "Abdul" || word === "Haseeb"
                   ? "bg-gradient-to-r from-indigo-400 via-purple-500 to-pink-500 bg-clip-text text-transparent"
                   : ""
               }
@@ -65,11 +68,12 @@ export default function Hero({ setActiveSection }) {
           className="text-lg text-gray-300 max-w-xl font-[Inter]"
           variants={item}
         >
-          A passionate{" "}
-          <span className="text-indigo-400">Python Web Developer</span>,{" "}
-          <span className="text-purple-400">Flutter Enthusiast</span> and{" "}
-          <span className="text-pink-400">Node.js Engineer</span> — building
-          modern applications with clean UI and smooth experiences.
+          I’m a passionate <span className="text-indigo-400">Game Developer</span>  
+          specialized in <span className="text-purple-400">Unity & C#</span>,  
+          creating <span className="text-pink-400">2D/3D worlds</span>, smooth{" "}
+          <span className="text-green-400">UI animations with DOTween</span>,  
+          and optimizing performance for an immersive{" "}
+          <span className="text-yellow-400">gaming experience</span> 🚀.
         </motion.p>
 
         {/* CTA Buttons */}
@@ -86,7 +90,7 @@ export default function Hero({ setActiveSection }) {
             hover:scale-105 hover:shadow-lg"
             variants={item}
           >
-            🚀 View Projects
+            🎮 View My Games
           </motion.a>
 
           {/* Contact Me */}
@@ -102,7 +106,7 @@ export default function Hero({ setActiveSection }) {
 
           {/* Download Resume */}
           <motion.a
-            href="/Resume.pdf" // ✅ apni resume file public folder me daal kar path adjust karo
+            href="/Resume.pdf" // ✅ Resume.pdf ko "public" folder me rakho
             download
             className="px-6 py-3 bg-gradient-to-r from-green-400 via-emerald-500 to-teal-500 
             text-white rounded-lg font-[Poppins] font-medium shadow-md transition-transform 
@@ -111,6 +115,34 @@ export default function Hero({ setActiveSection }) {
           >
             📄 Download Resume
           </motion.a>
+        </motion.div>
+
+        {/* 🔹 Tech Stack Icons Row */}
+        <motion.div
+          className="flex flex-wrap justify-center md:justify-start gap-6 mt-8 text-4xl"
+          variants={container}
+        >
+          <motion.div variants={item} className="hover:text-indigo-400 transition">
+            <FaUnity />
+          </motion.div>
+          <motion.div variants={item} className="hover:text-purple-400 transition">
+            <SiDotnet />
+          </motion.div>
+          <motion.div variants={item} className="hover:text-pink-400 transition">
+            <MdAnimation />
+          </motion.div>
+          <motion.div variants={item} className="hover:text-orange-400 transition">
+            <SiFirebase />
+          </motion.div>
+          <motion.div variants={item} className="hover:text-gray-300 transition">
+            <FaGithub />
+          </motion.div>
+          <motion.div variants={item} className="hover:text-yellow-400 transition">
+            <GiLightningFrequency />
+          </motion.div>
+          <motion.div variants={item} className="hover:text-green-400 transition">
+            <FaCode />
+          </motion.div>
         </motion.div>
       </motion.div>
 

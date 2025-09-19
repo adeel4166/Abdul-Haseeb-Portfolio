@@ -37,7 +37,7 @@ export default function Navbar({ setActiveSection }) {
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6">
         {/* Logo */}
         <h1 className="text-2xl font-extrabold tracking-tight text-white font-[Cinzel]">
-          <span className="text-indigo-500">Adeel</span> Portfolio
+          <span className="text-indigo-500">Abdul</span> Portfolio
         </h1>
 
         {/* Desktop Nav */}

@@ -4,8 +4,6 @@ import { motion } from "framer-motion";
 import {
   Github,
   Linkedin,
-
- 
   Facebook,
   MessageCircle,
   Mail,
@@ -25,7 +23,8 @@ const item = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
 };
 
-export default function Footer() {
+// ✅ setActiveSection prop add kiya
+export default function Footer({ setActiveSection }) {
   return (
     <footer className="bg-gradient-to-b from-gray-900 to-black text-white px-6 py-14 !mt-0">
       <motion.div
@@ -38,12 +37,13 @@ export default function Footer() {
         {/* Branding */}
         <motion.div className="space-y-4" variants={item}>
           <h2 className="text-2xl font-extrabold font-[Cinzel]">
-            <span className="text-indigo-400">Adeel</span> Portfolio
+            <span className="text-indigo-400">Abdul</span> Portfolio
           </h2>
           <p className="text-gray-400 text-sm font-[Inter] leading-relaxed">
-            Crafting modern and scalable web & mobile applications with a focus
-            on clean UI, smooth user experiences, and performance-driven
-            solutions. Passionate about blending creativity with technology.
+            Crafting immersive and high-performance games with a focus on
+            stunning visuals, smooth gameplay, and optimized experiences.
+            Passionate about bringing virtual worlds to life by blending
+            creativity with cutting-edge technology.
           </p>
         </motion.div>
 
@@ -58,7 +58,13 @@ export default function Footer() {
                   whileHover={{ x: 5, color: "#818cf8" }}
                   transition={{ type: "spring", stiffness: 300 }}
                 >
-                  <a href={`#${link.toLowerCase()}`}>{link}</a>
+                  {/* ✅ state-based navigation */}
+                  <button
+                    onClick={() => setActiveSection(link.toLowerCase())}
+                    className="hover:text-indigo-400 transition"
+                  >
+                    {link}
+                  </button>
                 </motion.li>
               )
             )}
@@ -73,17 +79,27 @@ export default function Footer() {
           </p>
           <div className="flex flex-wrap gap-5">
             {[
-              { href: "mailto:adeelkhan4128@gmail.com", icon: <Mail size={22} /> },
-              { href: "tel:+923004166107", icon: <Phone size={22} /> },
-              { href: "https://wa.me/923004166107", icon: <MessageCircle size={22} /> },
-              { href: "https://github.com/adeel4166", icon: <Github size={22} /> },
+              {
+                href: "mailto:abdulhaseeb0847179@gmail.com",
+                icon: <Mail size={22} />,
+              },
+              { href: "tel:+923074058316", icon: <Phone size={22} /> },
+              {
+                href: "https://wa.me/923074058316",
+                icon: <MessageCircle size={22} />,
+              },
+              {
+                href: "https://github.com/adeel4166",
+                icon: <Github size={22} />,
+              },
               {
                 href: "https://www.linkedin.com/in/adeel-ahmad-639b852ab",
                 icon: <Linkedin size={22} />,
               },
-              
-              
-              { href: "https://www.facebook.com/share/1CNHJpcrZj/", icon: <Facebook size={22} /> },
+              {
+                href: "https://www.facebook.com/share/1CNHJpcrZj/",
+                icon: <Facebook size={22} />,
+              },
             ].map((social, i) => (
               <motion.a
                 key={i}
@@ -104,10 +120,19 @@ export default function Footer() {
               📍 <span className="text-gray-300">Lahore, Pakistan</span>
             </p>
             <p>
-              📧 <a href="mailto:adeelkhan4128@gmail.com" className="hover:text-indigo-400">adeelkhan4128@gmail.com</a>
+              📧{" "}
+              <a
+                href="mailto:abdulhaseeb0847179@gmail.com"
+                className="hover:text-indigo-400"
+              >
+                abdulhaseeb0847179@gmail.com
+              </a>
             </p>
             <p>
-              📞 <a href="tel:+923004166107" className="hover:text-indigo-400">+92 300 4166107</a>
+              📞{" "}
+              <a href="tel:+923074058316" className="hover:text-indigo-400">
+                +92 307 4058316
+              </a>
             </p>
           </div>
         </motion.div>
@@ -120,7 +145,8 @@ export default function Footer() {
         whileInView={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
-        © {new Date().getFullYear()} Adeel Portfolio. All Rights Reserved. | Designed & Developed with 💜 by Adeel Ahmad
+        © {new Date().getFullYear()} Abdul Portfolio. All Rights Reserved. |
+        Designed & Developed with 💜 by Abdul Haseeb
       </motion.div>
     </footer>
   );

@@ -55,11 +55,11 @@ export default function Contact() {
         viewport={{ once: true }}
       >
         {[
-          { href: "mailto:adeelkhan4128@gmail.com", icon: <Mail size={26} /> },
-          { href: "tel:+923004166107", icon: <Phone size={26} /> },
+          { href: "mailto:abdulhaseeb0847179@gmail.com", icon: <Mail size={26} /> },
+          { href: "tel:+923074058316", icon: <Phone size={26} /> },
           
           { href: "https://www.facebook.com/share/1CNHJpcrZj/", icon: <Facebook size={26} /> },
-          { href: "https://wa.me/923004166107", icon: <MessageCircle size={26} /> },
+          { href: "https://wa.me/923074058316", icon: <MessageCircle size={26} /> },
           { href: "https://github.com/adeel4166", icon: <Github size={26} /> },
           {
             href: "https://www.linkedin.com/in/adeel-ahmad-639b852ab",

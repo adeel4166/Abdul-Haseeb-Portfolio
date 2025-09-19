@@ -24,7 +24,7 @@ function App() {
       {activeSection === "contact" && <Contact />}
 
       {/* Footer */}
-      <Footer />
+      <Footer setActiveSection={setActiveSection} />
     </div>
   );
 }

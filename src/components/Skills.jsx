@@ -52,7 +52,7 @@ function SkillCard({ name, desc, level, icon, delay }) {
 export default function Skills() {
   const categories = ["All", "Game Dev", "Programming", "Tools", "Cloud"];
   const [selectedCategory, setSelectedCategory] = useState("All");
-  const [search, setSearch] = useState("");
+
 
   const skills = [
     {

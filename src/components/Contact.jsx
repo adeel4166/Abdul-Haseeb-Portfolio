@@ -82,16 +82,16 @@ export default function Contact() {
           },
           { href: "tel:+923074058316", icon: <Phone size={26} /> },
           {
-            href: "https://www.facebook.com/share/1CNHJpcrZj/",
+            href: "https://www.facebook.com/share/1BfvWMhmdy/",
             icon: <Facebook size={26} />,
           },
           {
             href: "https://wa.me/923074058316",
             icon: <MessageCircle size={26} />,
           },
-          { href: "https://github.com/adeel4166", icon: <Github size={26} /> },
+          { href: "https://share.google/z4idK2IpJcDlV6hmP", icon: <Github size={26} /> },
           {
-            href: "https://www.linkedin.com/in/adeel-ahmad-639b852ab",
+            href: "https://www.linkedin.com/in/abdul-haseeb-533302214?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
             icon: <Linkedin size={26} />,
           },
         ].map((social, i) => (

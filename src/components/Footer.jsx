@@ -99,15 +99,15 @@ export default function Footer({ setActiveSection }) {
                 icon: <MessageCircle size={22} />,
               },
               {
-                href: "https://github.com/adeel4166",
+                href: "https://share.google/z4idK2IpJcDlV6hmP",
                 icon: <Github size={22} />,
               },
               {
-                href: "https://www.linkedin.com/in/adeel-ahmad-639b852ab",
+                href: "https://www.linkedin.com/in/abdul-haseeb-533302214?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
                 icon: <Linkedin size={22} />,
               },
               {
-                href: "https://www.facebook.com/share/1CNHJpcrZj/",
+                href: "https://www.facebook.com/share/1BfvWMhmdy/",
                 icon: <Facebook size={22} />,
               },
             ].map((social, i) => (

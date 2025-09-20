@@ -1,7 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: "class", // 👈 add this line for dark mode toggle
   content: [
-    "./src/**/*.{js,jsx,ts,tsx}",
+    "./src/**/*.{js,jsx,ts,tsx}", // ✅ React files scan hote rahenge
   ],
   theme: {
     extend: {
@@ -17,4 +18,4 @@ module.exports = {
     },
   },
   plugins: [],
-}
+};

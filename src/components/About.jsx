@@ -21,20 +21,20 @@ const item = {
 
 export default function About() {
   const highlights = [
-    { icon: <FaUnity className="text-indigo-400 text-xl" />, text: "Unity (2D & 3D Game Dev)" },
-    { icon: <SiDotnet className="text-purple-400 text-xl" />, text: "C# / .NET (Gameplay & Systems)" },
-    { icon: <MdAnimation className="text-pink-400 text-xl" />, text: "DOTween (Animations & UI)" },
-    { icon: <FaGithub className="text-gray-300 text-xl" />, text: "GitHub (Version Control)" },
-    { icon: <GiLightningFrequency className="text-yellow-400 text-xl" />, text: "Optimization (Mobile/PC)" },
-    { icon: <SiFirebase className="text-orange-400 text-xl" />, text: "Firebase (Cloud & Auth)" },
-    { icon: <FaCode className="text-green-400 text-xl" />, text: "General Coding & Algorithms" },
+    { icon: <FaUnity className="text-indigo-500 dark:text-indigo-400 text-xl" />, text: "Unity (2D & 3D Game Dev)" },
+    { icon: <MdAnimation className="text-pink-500 dark:text-pink-400 text-xl" />, text: "DOTween (Animations & UI)" },
+    { icon: <FaGithub className="text-gray-600 dark:text-gray-300 text-xl" />, text: "GitHub (Version Control)" },
+    { icon: <GiLightningFrequency className="text-yellow-500 dark:text-yellow-400 text-xl" />, text: "Optimization (Mobile/PC)" },
+    { icon: <SiFirebase className="text-orange-500 dark:text-orange-400 text-xl" />, text: "Firebase (Cloud & Auth)" },
+    { icon: <FaCode className="text-green-600 dark:text-green-400 text-xl" />, text: "General Coding & Algorithms" },
   ];
 
   return (
     <section
       id="about"
       className="min-h-screen flex flex-col md:flex-row items-center justify-center 
-      bg-gradient-to-b from-black via-gray-900 to-black text-white px-8 py-20"
+      bg-gray-50 dark:bg-gradient-to-b dark:from-black dark:via-gray-900 dark:to-black 
+      text-gray-900 dark:text-white px-8 py-20 transition-colors duration-500"
     >
       {/* Left Image */}
       <motion.div
@@ -66,25 +66,25 @@ export default function About() {
           variants={item}
         >
           About{" "}
-          <span className="bg-gradient-to-r from-indigo-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
             Me
           </span>
         </motion.h2>
 
         {/* Description */}
         <motion.p
-          className="text-gray-300 leading-relaxed max-w-xl font-[Inter] text-lg"
+          className="text-gray-700 dark:text-gray-300 leading-relaxed max-w-xl font-[Inter] text-lg"
           variants={item}
         >
-          Hi, I’m <span className="text-indigo-400 font-semibold">Abdul Haseeb</span>, a{" "}
-          <span className="text-purple-400">Game Developer</span> and{" "}
-          <span className="text-pink-400">Full-Stack Engineer</span>.  
+          Hi, I’m <span className="text-indigo-600 dark:text-indigo-400 font-semibold">Abdul Haseeb</span>, a{" "}
+          <span className="text-purple-600 dark:text-purple-400">Game Developer</span> and{" "}
+          <span className="text-pink-600 dark:text-pink-400">Full-Stack Engineer</span>.  
           I specialize in creating{" "}
-          <span className="text-indigo-400">immersive 2D & 3D games</span> using Unity and DOTween, 
+          <span className="text-indigo-600 dark:text-indigo-400">immersive 2D & 3D games</span> using Unity and DOTween, 
           while also building scalable{" "}
-          <span className="text-green-400">web & mobile apps</span> with modern stacks.  
+          <span className="text-green-600 dark:text-green-400">web & mobile apps</span> with modern stacks.  
           My expertise lies in combining{" "}
-          <span className="text-yellow-400">performance optimization</span>, clean coding to deliver engaging digital experiences 🚀.
+          <span className="text-yellow-600 dark:text-yellow-400">performance optimization</span>, clean coding to deliver engaging digital experiences 🚀.
         </motion.p>
 
         {/* Highlights with Icons */}
@@ -95,8 +95,8 @@ export default function About() {
           {highlights.map((skill, i) => (
             <motion.span
               key={i}
-              className="flex items-center gap-2 px-4 py-2 bg-white/5 text-sm rounded-lg text-gray-300 
-              border border-gray-700 font-[Poppins]
+              className="flex items-center gap-2 px-4 py-2 bg-gray-100 dark:bg-white/5 text-sm rounded-lg text-gray-700 dark:text-gray-300 
+              border border-gray-300 dark:border-gray-700 font-[Poppins]
               hover:bg-gradient-to-r hover:from-indigo-500 hover:to-purple-600 
               hover:text-white transition-all duration-300 shadow-md"
               variants={item}

@@ -43,7 +43,8 @@ export default function Projects() {
     <section
       id="projects"
       className="min-h-screen flex flex-col justify-center items-center 
-      bg-gradient-to-b from-black via-gray-900 to-black text-white px-6 py-20"
+      bg-gray-50 dark:bg-gradient-to-b dark:from-black dark:via-gray-900 dark:to-black 
+      text-gray-900 dark:text-white px-6 py-20 transition-colors duration-500"
     >
       {/* Heading */}
       <motion.h2
@@ -53,7 +54,7 @@ export default function Projects() {
         transition={{ duration: 0.6 }}
       >
         My{" "}
-        <span className="bg-gradient-to-r from-indigo-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+        <span className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
           Projects
         </span>
       </motion.h2>
@@ -63,9 +64,12 @@ export default function Projects() {
         {projects.map((project, i) => (
           <motion.div
             key={i}
-            className="flex flex-col items-center bg-white/5 border border-gray-700 
-            rounded-2xl shadow-xl p-6 backdrop-blur-lg hover:shadow-[0_0_40px_rgba(139,92,246,0.6)] 
-            transition-all duration-500"
+            className="flex flex-col items-center 
+              bg-white 
+              dark:bg-gradient-to-b dark:from-gray-950 dark:via-gray-900 dark:to-black
+              border border-gray-200 dark:border-gray-800 
+              rounded-2xl shadow-lg p-6 
+              transition-colors duration-500"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: i * 0.2 }}
@@ -81,17 +85,20 @@ export default function Projects() {
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
-                className="rounded-xl shadow-lg"
+                className="rounded-xl shadow-md"
               ></iframe>
             </div>
 
             {/* Title */}
-            <h3 className="text-2xl font-bold mb-3 bg-gradient-to-r from-indigo-400 via-purple-500 to-pink-500 bg-clip-text text-transparent font-[Poppins] text-center">
+            <h3 className="text-2xl font-bold mb-3 
+              bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 
+              bg-clip-text text-transparent font-[Poppins] text-center"
+            >
               {project.title}
             </h3>
 
             {/* Description */}
-            <p className="text-gray-300 text-sm leading-relaxed text-center font-[Inter] mb-4">
+            <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed text-center font-[Inter] mb-4">
               {project.desc}
             </p>
 
@@ -100,7 +107,8 @@ export default function Projects() {
               {project.tags.map((tag, index) => (
                 <span
                   key={index}
-                  className="px-3 py-1 text-xs bg-gradient-to-r from-indigo-500 to-purple-600 text-white rounded-full shadow-md font-[Poppins]"
+                  className="px-3 py-1 text-xs bg-gradient-to-r from-indigo-500 to-purple-600 
+                  text-white rounded-full shadow-md font-[Poppins]"
                 >
                   {tag}
                 </span>
@@ -109,22 +117,30 @@ export default function Projects() {
 
             {/* Buttons */}
             <div className="flex justify-center space-x-6">
+              {/* Live Demo */}
               <a
                 href={project.demo}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center space-x-2 px-4 py-2 bg-gradient-to-r 
-                from-pink-500 via-purple-500 to-indigo-500 text-white rounded-lg 
-                shadow-lg hover:scale-105 transition-all font-[Poppins] text-sm"
+                className="flex items-center space-x-2 px-4 py-2 
+                bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 
+                text-white rounded-lg shadow-lg hover:scale-105 
+                transition-all font-[Poppins] text-sm"
               >
                 <ExternalLink size={16} /> <span>Live Demo</span>
               </a>
+
+              {/* Source Code */}
               <a
                 href={project.code}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center space-x-2 px-4 py-2 border border-gray-400 
-                text-gray-300 rounded-lg hover:bg-gray-800 hover:text-white transition-all font-[Poppins] text-sm"
+                className="flex items-center space-x-2 px-4 py-2 border 
+                border-gray-300 dark:border-gray-600 
+                text-gray-700 dark:text-gray-300 rounded-lg 
+                hover:bg-gray-100 dark:hover:bg-gray-800 
+                hover:text-black dark:hover:text-white 
+                transition-all font-[Poppins] text-sm"
               >
                 <Github size={16} /> <span>Source Code</span>
               </a>

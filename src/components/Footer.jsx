@@ -26,7 +26,7 @@ const item = {
 // ✅ setActiveSection prop add kiya
 export default function Footer({ setActiveSection }) {
   return (
-    <footer className="bg-gradient-to-b from-gray-900 to-black text-white px-6 py-14 !mt-0">
+    <footer className="bg-gray-100 dark:bg-gradient-to-b dark:from-gray-900 dark:to-black text-gray-900 dark:text-white px-6 py-14 !mt-0 transition-colors duration-500">
       <motion.div
         className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12"
         variants={container}
@@ -37,9 +37,9 @@ export default function Footer({ setActiveSection }) {
         {/* Branding */}
         <motion.div className="space-y-4" variants={item}>
           <h2 className="text-2xl font-extrabold font-[Cinzel]">
-            <span className="text-indigo-400">Abdul</span> Portfolio
+            <span className="text-indigo-600 dark:text-indigo-400">Abdul</span> Portfolio
           </h2>
-          <p className="text-gray-400 text-sm font-[Inter] leading-relaxed">
+          <p className="text-gray-600 dark:text-gray-400 text-sm font-[Inter] leading-relaxed">
             Crafting immersive and high-performance games with a focus on
             stunning visuals, smooth gameplay, and optimized experiences.
             Passionate about bringing virtual worlds to life by blending
@@ -50,63 +50,46 @@ export default function Footer({ setActiveSection }) {
         {/* Quick Links */}
         <motion.div className="space-y-4 font-[Poppins]" variants={item}>
           <h3 className="font-semibold text-lg">Quick Links</h3>
-          <ul className="space-y-2 text-gray-400">
-            {["Home", "About", "Skills", "Projects", "Contact"].map(
-              (link, i) => (
-                <motion.li
-                  key={i}
-                  whileHover={{ x: 5, color: "#818cf8" }}
-                  transition={{ type: "spring", stiffness: 300 }}
+          <ul className="space-y-2 text-gray-600 dark:text-gray-400">
+            {["Home", "About", "Skills", "Projects", "Contact"].map((link, i) => (
+              <motion.li
+                key={i}
+                whileHover={{ x: 5, color: "#818cf8" }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                {/* ✅ state-based navigation */}
+                <button
+                  onClick={() => setActiveSection(link.toLowerCase())}
+                  className="hover:text-indigo-600 dark:hover:text-indigo-400 transition"
                 >
-                  {/* ✅ state-based navigation */}
-                  <button
-                    onClick={() => setActiveSection(link.toLowerCase())}
-                    className="hover:text-indigo-400 transition"
-                  >
-                    {link}
-                  </button>
-                </motion.li>
-              )
-            )}
+                  {link}
+                </button>
+              </motion.li>
+            ))}
           </ul>
         </motion.div>
 
         {/* Contact + Social */}
         <motion.div className="space-y-4 font-[Poppins]" variants={item}>
           <h3 className="font-semibold text-lg">Connect With Me</h3>
-          <p className="text-sm text-gray-400 mb-3 font-[Inter]">
+          <p className="text-sm text-gray-600 dark:text-gray-400 mb-3 font-[Inter]">
             Let’s connect on social platforms or drop me a quick message.
           </p>
           <div className="flex flex-wrap gap-5">
             {[
-              {
-                href: "mailto:abdulhaseeb0847179@gmail.com",
-                icon: <Mail size={22} />,
-              },
+              { href: "mailto:abdulhaseeb0847179@gmail.com", icon: <Mail size={22} /> },
               { href: "tel:+923074058316", icon: <Phone size={22} /> },
-              {
-                href: "https://wa.me/923074058316",
-                icon: <MessageCircle size={22} />,
-              },
-              {
-                href: "https://github.com/adeel4166",
-                icon: <Github size={22} />,
-              },
-              {
-                href: "https://www.linkedin.com/in/adeel-ahmad-639b852ab",
-                icon: <Linkedin size={22} />,
-              },
-              {
-                href: "https://www.facebook.com/share/1CNHJpcrZj/",
-                icon: <Facebook size={22} />,
-              },
+              { href: "https://wa.me/923074058316", icon: <MessageCircle size={22} /> },
+              { href: "https://github.com/adeel4166", icon: <Github size={22} /> },
+              { href: "https://www.linkedin.com/in/adeel-ahmad-639b852ab", icon: <Linkedin size={22} /> },
+              { href: "https://www.facebook.com/share/1CNHJpcrZj/", icon: <Facebook size={22} /> },
             ].map((social, i) => (
               <motion.a
                 key={i}
                 href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-indigo-400 transition transform hover:scale-125"
+                className="hover:text-indigo-600 dark:hover:text-indigo-400 transition transform hover:scale-125"
                 whileHover={{ scale: 1.2 }}
               >
                 {social.icon}
@@ -115,22 +98,25 @@ export default function Footer({ setActiveSection }) {
           </div>
 
           {/* Contact Info */}
-          <div className="mt-4 text-sm text-gray-400 space-y-1 font-[Inter]">
+          <div className="mt-4 text-sm text-gray-600 dark:text-gray-400 space-y-1 font-[Inter]">
             <p>
-              📍 <span className="text-gray-300">Lahore, Pakistan</span>
+              📍 <span className="text-gray-800 dark:text-gray-300">Lahore, Pakistan</span>
             </p>
             <p>
               📧{" "}
               <a
                 href="mailto:abdulhaseeb0847179@gmail.com"
-                className="hover:text-indigo-400"
+                className="hover:text-indigo-600 dark:hover:text-indigo-400"
               >
                 abdulhaseeb0847179@gmail.com
               </a>
             </p>
             <p>
               📞{" "}
-              <a href="tel:+923074058316" className="hover:text-indigo-400">
+              <a
+                href="tel:+923074058316"
+                className="hover:text-indigo-600 dark:hover:text-indigo-400"
+              >
                 +92 307 4058316
               </a>
             </p>
@@ -140,7 +126,7 @@ export default function Footer({ setActiveSection }) {
 
       {/* Bottom Text */}
       <motion.div
-        className="text-center text-gray-500 text-sm mt-6 border-t border-gray-800 pt-3 font-[Inter]"
+        className="text-center text-gray-500 dark:text-gray-400 text-sm mt-6 border-t border-gray-300 dark:border-gray-800 pt-3 font-[Inter]"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 1 }}

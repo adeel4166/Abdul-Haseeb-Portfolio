@@ -26,7 +26,8 @@ export default function Hero({ setActiveSection }) {
     <section
       id="home"
       className="min-h-screen flex flex-col md:flex-row items-center justify-center 
-      bg-gradient-to-br from-black via-gray-900 to-gray-800 text-white px-8 py-20"
+      bg-gray-50 dark:bg-gradient-to-br dark:from-black dark:via-gray-900 dark:to-gray-800 
+      text-gray-900 dark:text-white px-8 py-20 transition-colors duration-500"
     >
       {/* Left Content */}
       <motion.div
@@ -37,7 +38,7 @@ export default function Hero({ setActiveSection }) {
       >
         {/* Badge */}
         <motion.span
-          className="px-4 py-1 bg-indigo-500/20 text-indigo-400 text-sm font-[Poppins] font-medium rounded-full"
+          className="px-4 py-1 bg-indigo-100 dark:bg-indigo-500/20 text-indigo-600 dark:text-indigo-400 text-sm font-[Poppins] font-medium rounded-full"
           variants={item}
         >
           🎮 Game Developer
@@ -54,7 +55,7 @@ export default function Hero({ setActiveSection }) {
               variants={item}
               className={
                 word === "Abdul" || word === "Haseeb"
-                  ? "bg-gradient-to-r from-indigo-400 via-purple-500 to-pink-500 bg-clip-text text-transparent"
+                  ? "bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent"
                   : ""
               }
             >
@@ -65,15 +66,15 @@ export default function Hero({ setActiveSection }) {
 
         {/* Subtitle */}
         <motion.p
-          className="text-lg text-gray-300 max-w-xl font-[Inter]"
+          className="text-lg text-gray-700 dark:text-gray-300 max-w-xl font-[Inter]"
           variants={item}
         >
-          I’m a passionate <span className="text-indigo-400">Game Developer</span>  
-          specialized in <span className="text-purple-400">Unity & C#</span>,  
-          creating <span className="text-pink-400">2D/3D worlds</span>, smooth{" "}
-          <span className="text-green-400">UI animations with DOTween</span>,  
+          I’m a passionate <span className="text-indigo-600 dark:text-indigo-400">Game Developer</span>  
+          specialized in <span className="text-purple-600 dark:text-purple-400">Unity & C#</span>,  
+          creating <span className="text-pink-600 dark:text-pink-400">2D/3D worlds</span>, smooth{" "}
+          <span className="text-green-600 dark:text-green-400">UI animations with DOTween</span>,  
           and optimizing performance for an immersive{" "}
-          <span className="text-yellow-400">gaming experience</span> 🚀.
+          <span className="text-yellow-600 dark:text-yellow-400">gaming experience</span> 🚀.
         </motion.p>
 
         {/* CTA Buttons */}
@@ -97,7 +98,7 @@ export default function Hero({ setActiveSection }) {
           <motion.a
             href="#contact"
             onClick={() => setActiveSection("contact")}
-            className="px-6 py-3 border border-indigo-500 text-indigo-400 rounded-lg 
+            className="px-6 py-3 border border-indigo-500 text-indigo-600 dark:text-indigo-400 rounded-lg 
             font-[Poppins] font-medium hover:bg-indigo-500 hover:text-white hover:scale-105 transition-all"
             variants={item}
           >
@@ -122,25 +123,25 @@ export default function Hero({ setActiveSection }) {
           className="flex flex-wrap justify-center md:justify-start gap-6 mt-8 text-4xl"
           variants={container}
         >
-          <motion.div variants={item} className="hover:text-indigo-400 transition">
+          <motion.div variants={item} className="text-gray-600 dark:text-white hover:text-indigo-500 transition">
             <FaUnity />
           </motion.div>
-          <motion.div variants={item} className="hover:text-purple-400 transition">
+          <motion.div variants={item} className="text-gray-600 dark:text-white hover:text-purple-500 transition">
             <SiDotnet />
           </motion.div>
-          <motion.div variants={item} className="hover:text-pink-400 transition">
+          <motion.div variants={item} className="text-gray-600 dark:text-white hover:text-pink-500 transition">
             <MdAnimation />
           </motion.div>
-          <motion.div variants={item} className="hover:text-orange-400 transition">
+          <motion.div variants={item} className="text-gray-600 dark:text-white hover:text-orange-500 transition">
             <SiFirebase />
           </motion.div>
-          <motion.div variants={item} className="hover:text-gray-300 transition">
+          <motion.div variants={item} className="text-gray-600 dark:text-white hover:text-gray-500 transition">
             <FaGithub />
           </motion.div>
-          <motion.div variants={item} className="hover:text-yellow-400 transition">
+          <motion.div variants={item} className="text-gray-600 dark:text-white hover:text-yellow-500 transition">
             <GiLightningFrequency />
           </motion.div>
-          <motion.div variants={item} className="hover:text-green-400 transition">
+          <motion.div variants={item} className="text-gray-600 dark:text-white hover:text-green-500 transition">
             <FaCode />
           </motion.div>
         </motion.div>

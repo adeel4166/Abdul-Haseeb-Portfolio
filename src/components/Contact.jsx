@@ -10,18 +10,18 @@ import {
   Phone,
 } from "lucide-react";
 
-// Animation Variants (FAST)
+// Animation Variants
 const container = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: { staggerChildren: 0.08 }, // faster stagger
+    transition: { staggerChildren: 0.08 },
   },
 };
 
 const item = {
   hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.3 } }, // faster duration
+  visible: { opacity: 1, y: 0, transition: { duration: 0.3 } },
 };
 
 export default function Contact() {
@@ -29,7 +29,8 @@ export default function Contact() {
     <section
       id="contact"
       className="min-h-screen flex flex-col justify-center items-center 
-      bg-gradient-to-b from-gray-900 via-black to-gray-900 text-white px-6 py-20"
+      bg-gray-100 dark:bg-gradient-to-b dark:from-black dark:via-gray-900 dark:to-black 
+      text-gray-900 dark:text-white px-6 py-20 transition-colors duration-500"
     >
       {/* Heading */}
       <motion.h2
@@ -38,10 +39,10 @@ export default function Contact() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4 }}
       >
-        Get in <span className="text-indigo-400">Touch</span>
+        Get in <span className="text-indigo-500 dark:text-indigo-400">Touch</span>
       </motion.h2>
 
-      <p className="text-gray-400 text-center mb-8 max-w-xl font-[Inter]">
+      <p className="text-gray-600 dark:text-gray-400 text-center mb-8 max-w-xl font-[Inter]">
         Feel free to reach out for collaborations, opportunities, or just a
         friendly chat.
       </p>
@@ -57,7 +58,6 @@ export default function Contact() {
         {[
           { href: "mailto:abdulhaseeb0847179@gmail.com", icon: <Mail size={26} /> },
           { href: "tel:+923074058316", icon: <Phone size={26} /> },
-          
           { href: "https://www.facebook.com/share/1CNHJpcrZj/", icon: <Facebook size={26} /> },
           { href: "https://wa.me/923074058316", icon: <MessageCircle size={26} /> },
           { href: "https://github.com/adeel4166", icon: <Github size={26} /> },
@@ -65,14 +65,13 @@ export default function Contact() {
             href: "https://www.linkedin.com/in/adeel-ahmad-639b852ab",
             icon: <Linkedin size={26} />,
           },
-          
         ].map((social, i) => (
           <motion.a
             key={i}
             href={social.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-indigo-400 transition transform hover:scale-125"
+            className="hover:text-indigo-500 dark:hover:text-indigo-400 transition transform hover:scale-125"
             variants={item}
           >
             {social.icon}
@@ -82,7 +81,10 @@ export default function Contact() {
 
       {/* Contact Form */}
       <motion.form
-        className="space-y-6 bg-white/5 backdrop-blur-md p-8 rounded-xl shadow-lg w-full max-w-lg font-[Poppins]"
+        className="space-y-6 
+        bg-white dark:bg-gradient-to-b dark:from-gray-950 dark:via-gray-900 dark:to-black 
+        backdrop-blur-md p-8 rounded-xl shadow-lg w-full max-w-lg 
+        font-[Poppins] transition-colors duration-500"
         variants={container}
         initial="hidden"
         whileInView="visible"
@@ -92,7 +94,10 @@ export default function Contact() {
           <input
             type="text"
             placeholder="Your Name"
-            className="w-full px-4 py-3 rounded-md bg-gray-800 text-white border border-gray-700 
+            className="w-full px-4 py-3 rounded-md 
+            bg-gray-50 dark:bg-gray-800 
+            text-gray-900 dark:text-white 
+            border border-gray-300 dark:border-gray-700 
             focus:border-indigo-500 focus:ring focus:ring-indigo-400/50 outline-none transition"
           />
         </motion.div>
@@ -101,7 +106,10 @@ export default function Contact() {
           <input
             type="email"
             placeholder="Your Email"
-            className="w-full px-4 py-3 rounded-md bg-gray-800 text-white border border-gray-700 
+            className="w-full px-4 py-3 rounded-md 
+            bg-gray-50 dark:bg-gray-800 
+            text-gray-900 dark:text-white 
+            border border-gray-300 dark:border-gray-700 
             focus:border-indigo-500 focus:ring focus:ring-indigo-400/50 outline-none transition"
           />
         </motion.div>
@@ -110,7 +118,10 @@ export default function Contact() {
           <textarea
             rows="5"
             placeholder="Your Message"
-            className="w-full px-4 py-3 rounded-md bg-gray-800 text-white border border-gray-700 
+            className="w-full px-4 py-3 rounded-md 
+            bg-gray-50 dark:bg-gray-800 
+            text-gray-900 dark:text-white 
+            border border-gray-300 dark:border-gray-700 
             focus:border-indigo-500 focus:ring focus:ring-indigo-400/50 outline-none transition"
           ></textarea>
         </motion.div>

@@ -133,18 +133,7 @@ export default function Skills() {
         </span>
       </motion.h2>
 
-      {/* Search Bar */}
-      <div className="w-full max-w-2xl flex flex-col sm:flex-row items-center gap-4 mb-6">
-        <input
-          type="text"
-          placeholder="🔍 Search skills..."
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-          className="flex-1 px-4 py-3 rounded-lg bg-gray-100 dark:bg-gray-800 
-          text-gray-900 dark:text-white border border-gray-300 dark:border-gray-700 
-          focus:border-indigo-500 focus:ring focus:ring-indigo-400/50 outline-none transition font-[Poppins]"
-        />
-      </div>
+    
 
       {/* Category Filter */}
       <div className="flex flex-wrap justify-center gap-3 mb-12">

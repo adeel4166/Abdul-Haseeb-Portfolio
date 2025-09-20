@@ -2,7 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaUnity, FaGithub, FaCode } from "react-icons/fa";
-import { SiDotnet, SiFirebase } from "react-icons/si";
+import { SiFirebase } from "react-icons/si";
 import { GiLightningFrequency } from "react-icons/gi";
 import { MdAnimation } from "react-icons/md";
 
@@ -21,12 +21,60 @@ const item = {
 
 export default function About() {
   const highlights = [
-    { icon: <FaUnity className="text-indigo-500 dark:text-indigo-400 text-xl" />, text: "Unity (2D & 3D Game Dev)" },
-    { icon: <MdAnimation className="text-pink-500 dark:text-pink-400 text-xl" />, text: "DOTween (Animations & UI)" },
-    { icon: <FaGithub className="text-gray-600 dark:text-gray-300 text-xl" />, text: "GitHub (Version Control)" },
-    { icon: <GiLightningFrequency className="text-yellow-500 dark:text-yellow-400 text-xl" />, text: "Optimization (Mobile/PC)" },
-    { icon: <SiFirebase className="text-orange-500 dark:text-orange-400 text-xl" />, text: "Firebase (Cloud & Auth)" },
-    { icon: <FaCode className="text-green-600 dark:text-green-400 text-xl" />, text: "General Coding & Algorithms" },
+    {
+      icon: (
+        <span className="flex items-center justify-center w-5 h-5">
+          <FaUnity size={22} className="text-indigo-500 dark:text-indigo-400" />
+        </span>
+      ),
+      text: "Unity (2D & 3D Game Dev)",
+    },
+    {
+      icon: (
+        <span className="flex items-center justify-center w-5 h-5">
+          <MdAnimation size={22} className="text-pink-500 dark:text-pink-400" />
+        </span>
+      ),
+      text: "DOTween (Animations & UI)",
+    },
+    {
+      icon: (
+        <span className="flex items-center justify-center w-5 h-5">
+          <FaGithub size={22} className="text-gray-600 dark:text-gray-300" />
+        </span>
+      ),
+      text: "GitHub (Version Control)",
+    },
+    {
+      icon: (
+        <span className="flex items-center justify-center w-5 h-5">
+          <GiLightningFrequency
+            size={22}
+            className="text-yellow-500 dark:text-yellow-400"
+          />
+        </span>
+      ),
+      text: "Optimization (Mobile/PC)",
+    },
+    {
+      icon: (
+        <span className="flex items-center justify-center w-5 h-5">
+          <SiFirebase
+            size={22}
+            className="text-orange-500 dark:text-orange-400"
+          />
+        </span>
+      ),
+      text: "Firebase (Cloud & Auth)",
+    },
+    {
+      icon: (
+        <span className="flex items-center justify-center w-5 h-5">
+          <FaCode size={22} className="text-green-600 dark:text-green-400" />
+        </span>
+      ),
+      text: "General Coding & Algorithms",
+    },
   ];
 
   return (
@@ -76,15 +124,31 @@ export default function About() {
           className="text-gray-700 dark:text-gray-300 leading-relaxed max-w-xl font-[Inter] text-lg"
           variants={item}
         >
-          Hi, I’m <span className="text-indigo-600 dark:text-indigo-400 font-semibold">Abdul Haseeb</span>, a{" "}
-          <span className="text-purple-600 dark:text-purple-400">Game Developer</span> and{" "}
-          <span className="text-pink-600 dark:text-pink-400">Full-Stack Engineer</span>.  
-          I specialize in creating{" "}
-          <span className="text-indigo-600 dark:text-indigo-400">immersive 2D & 3D games</span> using Unity and DOTween, 
-          while also building scalable{" "}
-          <span className="text-green-600 dark:text-green-400">web & mobile apps</span> with modern stacks.  
-          My expertise lies in combining{" "}
-          <span className="text-yellow-600 dark:text-yellow-400">performance optimization</span>, clean coding to deliver engaging digital experiences 🚀.
+          Hi, I’m{" "}
+          <span className="text-indigo-600 dark:text-indigo-400 font-semibold">
+            Abdul Haseeb
+          </span>
+          , a{" "}
+          <span className="text-purple-600 dark:text-purple-400">
+            Game Developer
+          </span>{" "}
+          and{" "}
+          <span className="text-pink-600 dark:text-pink-400">
+            Full-Stack Engineer
+          </span>
+          . I specialize in creating{" "}
+          <span className="text-indigo-600 dark:text-indigo-400">
+            immersive 2D & 3D games
+          </span>{" "}
+          using Unity and DOTween, while also building scalable{" "}
+          <span className="text-green-600 dark:text-green-400">
+            web & mobile apps
+          </span>{" "}
+          with modern stacks. My expertise lies in combining{" "}
+          <span className="text-yellow-600 dark:text-yellow-400">
+            performance optimization
+          </span>
+          , clean coding to deliver engaging digital experiences 🚀.
         </motion.p>
 
         {/* Highlights with Icons */}

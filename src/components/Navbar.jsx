@@ -13,10 +13,13 @@ import {
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
-export default function Navbar({ setActiveSection }) {
-  const [mobileMenu, setMobileMenu] = useState(false);
+export default function Navbar({
+  activeSection,
+  setActiveSection,
+  isMenuOpen,
+  setIsMenuOpen,
+}) {
   const [scrolled, setScrolled] = useState(false);
-  const [active, setActive] = useState("home");
   const [darkMode, setDarkMode] = useState(false);
 
   // Load theme
@@ -37,12 +40,8 @@ export default function Navbar({ setActiveSection }) {
 
   // Scroll lock when menu open
   useEffect(() => {
-    if (mobileMenu) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
-  }, [mobileMenu]);
+    document.body.style.overflow = isMenuOpen ? "hidden" : "auto";
+  }, [isMenuOpen]);
 
   // Toggle theme
   const toggleTheme = () => {
@@ -67,9 +66,14 @@ export default function Navbar({ setActiveSection }) {
   ];
 
   const handleClick = (value) => {
-    setActive(value);
     setActiveSection(value);
-    setMobileMenu(false);
+    setIsMenuOpen(false); // ✅ mobile menu close hoga
+    setTimeout(() => {
+      const section = document.getElementById(value);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 100);
   };
 
   const menuVariants = {
@@ -99,7 +103,7 @@ export default function Navbar({ setActiveSection }) {
               key={item.value}
               onClick={() => handleClick(item.value)}
               className={`relative transition-colors duration-300 group ${
-                active === item.value
+                activeSection === item.value
                   ? "text-indigo-500"
                   : "text-gray-700 dark:text-gray-300 hover:text-indigo-500"
               }`}
@@ -108,7 +112,11 @@ export default function Navbar({ setActiveSection }) {
               {/* Underline animation */}
               <span
                 className={`absolute left-0 -bottom-1 h-[2px] rounded-full transition-all duration-300 
-                ${active === item.value ? "w-full bg-indigo-500" : "w-0 bg-indigo-500 group-hover:w-full"}`}
+                ${
+                  activeSection === item.value
+                    ? "w-full bg-indigo-500"
+                    : "w-0 bg-indigo-500 group-hover:w-full"
+                }`}
               ></span>
             </button>
           ))}
@@ -123,10 +131,8 @@ export default function Navbar({ setActiveSection }) {
             {darkMode ? <Sun size={20} /> : <Moon size={20} />}
           </button>
 
-         
-
           <button
-            onClick={() => setMobileMenu(true)}
+            onClick={() => setIsMenuOpen(true)}
             className="md:hidden text-gray-900 dark:text-white p-2"
           >
             <Menu size={28} />
@@ -136,7 +142,7 @@ export default function Navbar({ setActiveSection }) {
 
       {/* Mobile Menu */}
       <AnimatePresence>
-        {mobileMenu && (
+        {isMenuOpen && (
           <motion.div
             variants={menuVariants}
             initial="hidden"
@@ -151,7 +157,7 @@ export default function Navbar({ setActiveSection }) {
               <h1 className="text-xl font-bold">
                 <span className="text-indigo-500">Abdul</span>.Dev
               </h1>
-              <button onClick={() => setMobileMenu(false)}>
+              <button onClick={() => setIsMenuOpen(false)}>
                 <ArrowLeft size={28} />
               </button>
             </div>
@@ -163,19 +169,20 @@ export default function Navbar({ setActiveSection }) {
                   key={item.value}
                   onClick={() => handleClick(item.value)}
                   className={`group flex flex-col items-center gap-2 p-4 rounded-lg transition-all duration-300 hover:bg-gray-800 
-                  ${active === item.value ? "text-indigo-400" : "text-gray-300"}`}
+                  ${
+                    activeSection === item.value
+                      ? "text-indigo-400"
+                      : "text-gray-300"
+                  }`}
                 >
                   {item.icon}
                   <span className="relative">
                     {item.name}
-                    {/* Underline animation for mobile */}
                     <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-indigo-500 transition-all duration-300 group-hover:w-full"></span>
                   </span>
                 </button>
               ))}
             </div>
-
-           
           </motion.div>
         )}
       </AnimatePresence>

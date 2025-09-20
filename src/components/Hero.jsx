@@ -69,26 +69,38 @@ export default function Hero({ setActiveSection }) {
           className="text-lg text-gray-700 dark:text-gray-300 max-w-xl font-[Inter]"
           variants={item}
         >
-          I’m a passionate <span className="text-indigo-600 dark:text-indigo-400">Game Developer</span>  
-          specialized in <span className="text-purple-600 dark:text-purple-400">Unity & C#</span>,  
-          creating <span className="text-pink-600 dark:text-pink-400">2D/3D worlds</span>, smooth{" "}
-          <span className="text-green-600 dark:text-green-400">UI animations with DOTween</span>,  
-          and optimizing performance for an immersive{" "}
-          <span className="text-yellow-600 dark:text-yellow-400">gaming experience</span> 🚀.
+          I’m a passionate{" "}
+          <span className="text-indigo-600 dark:text-indigo-400">
+            Game Developer
+          </span>{" "}
+          specialized in{" "}
+          <span className="text-purple-600 dark:text-purple-400">Unity & C#</span>
+          , creating{" "}
+          <span className="text-pink-600 dark:text-pink-400">2D/3D worlds</span>,
+          smooth{" "}
+          <span className="text-green-600 dark:text-green-400">
+            UI animations with DOTween
+          </span>
+          , and optimizing performance for an immersive{" "}
+          <span className="text-yellow-600 dark:text-yellow-400">
+            gaming experience
+          </span>{" "}
+          🚀.
         </motion.p>
 
         {/* CTA Buttons */}
         <motion.div
-          className="flex flex-wrap justify-center md:justify-start gap-4"
+          className="flex flex-nowrap justify-center md:justify-start gap-2 overflow-x-auto max-w-full scrollbar-hide"
           variants={container}
         >
           {/* View Projects */}
           <motion.a
             href="#projects"
             onClick={() => setActiveSection("projects")}
-            className="px-6 py-3 bg-gradient-to-r from-indigo-500 via-purple-600 to-pink-600 
-            text-white rounded-lg font-[Poppins] font-medium shadow-md transition-transform 
-            hover:scale-105 hover:shadow-lg"
+            className="px-4 py-2 text-sm sm:px-6 sm:py-3 sm:text-base 
+                       bg-gradient-to-r from-indigo-500 via-purple-600 to-pink-600 
+                       text-white rounded-lg font-[Poppins] font-medium shadow-md 
+                       transition-transform hover:scale-105 hover:shadow-lg"
             variants={item}
           >
             🎮 View My Games
@@ -98,8 +110,10 @@ export default function Hero({ setActiveSection }) {
           <motion.a
             href="#contact"
             onClick={() => setActiveSection("contact")}
-            className="px-6 py-3 border border-indigo-500 text-indigo-600 dark:text-indigo-400 rounded-lg 
-            font-[Poppins] font-medium hover:bg-indigo-500 hover:text-white hover:scale-105 transition-all"
+            className="px-4 py-2 text-sm sm:px-6 sm:py-3 sm:text-base 
+                       border border-indigo-500 text-indigo-600 dark:text-indigo-400 
+                       rounded-lg font-[Poppins] font-medium hover:bg-indigo-500 
+                       hover:text-white hover:scale-105 transition-all"
             variants={item}
           >
             📩 Contact Me
@@ -107,11 +121,12 @@ export default function Hero({ setActiveSection }) {
 
           {/* Download Resume */}
           <motion.a
-            href="/Resume.pdf" // ✅ Resume.pdf ko "public" folder me rakho
+            href="/Resume.pdf"
             download
-            className="px-6 py-3 bg-gradient-to-r from-green-400 via-emerald-500 to-teal-500 
-            text-white rounded-lg font-[Poppins] font-medium shadow-md transition-transform 
-            hover:scale-105 hover:shadow-lg"
+            className="px-4 py-2 text-sm sm:px-6 sm:py-3 sm:text-base 
+                       bg-gradient-to-r from-green-400 via-emerald-500 to-teal-500 
+                       text-white rounded-lg font-[Poppins] font-medium shadow-md 
+                       transition-transform hover:scale-105 hover:shadow-lg"
             variants={item}
           >
             📄 Download Resume
@@ -123,25 +138,41 @@ export default function Hero({ setActiveSection }) {
           className="flex flex-wrap justify-center md:justify-start gap-6 mt-8 text-4xl"
           variants={container}
         >
-          <motion.div variants={item} className="text-gray-600 dark:text-white hover:text-indigo-500 transition">
+          <motion.div
+            variants={item}
+            className="text-gray-600 dark:text-white hover:text-indigo-500 transition"
+          >
             <FaUnity />
           </motion.div>
-          <motion.div variants={item} className="text-gray-600 dark:text-white hover:text-purple-500 transition">
-            <SiDotnet />
-          </motion.div>
-          <motion.div variants={item} className="text-gray-600 dark:text-white hover:text-pink-500 transition">
+          
+          <motion.div
+            variants={item}
+            className="text-gray-600 dark:text-white hover:text-pink-500 transition"
+          >
             <MdAnimation />
           </motion.div>
-          <motion.div variants={item} className="text-gray-600 dark:text-white hover:text-orange-500 transition">
+          <motion.div
+            variants={item}
+            className="text-gray-600 dark:text-white hover:text-orange-500 transition"
+          >
             <SiFirebase />
           </motion.div>
-          <motion.div variants={item} className="text-gray-600 dark:text-white hover:text-gray-500 transition">
+          <motion.div
+            variants={item}
+            className="text-gray-600 dark:text-white hover:text-gray-500 transition"
+          >
             <FaGithub />
           </motion.div>
-          <motion.div variants={item} className="text-gray-600 dark:text-white hover:text-yellow-500 transition">
+          <motion.div
+            variants={item}
+            className="text-gray-600 dark:text-white hover:text-yellow-500 transition"
+          >
             <GiLightningFrequency />
           </motion.div>
-          <motion.div variants={item} className="text-gray-600 dark:text-white hover:text-green-500 transition">
+          <motion.div
+            variants={item}
+            className="text-gray-600 dark:text-white hover:text-green-500 transition"
+          >
             <FaCode />
           </motion.div>
         </motion.div>
@@ -155,7 +186,7 @@ export default function Hero({ setActiveSection }) {
         transition={{ duration: 1, delay: 0.5, type: "spring" }}
       >
         <img
-          src="Profile.jpeg" // ✅ apni profile image ka path do
+          src="Profile.jpeg"
           alt="Profile"
           className="w-64 h-64 md:w-80 md:h-80 rounded-full object-cover 
           shadow-[0_0_30px_rgba(139,92,246,0.6)]"

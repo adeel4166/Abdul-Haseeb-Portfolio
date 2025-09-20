@@ -106,18 +106,7 @@ export default function Hero({ setActiveSection }) {
             🎮 View My Games
           </motion.a>
 
-          {/* Contact Me */}
-          <motion.a
-            href="#contact"
-            onClick={() => setActiveSection("contact")}
-            className="px-4 py-2 text-sm sm:px-6 sm:py-3 sm:text-base 
-                       border border-indigo-500 text-indigo-600 dark:text-indigo-400 
-                       rounded-lg font-[Poppins] font-medium hover:bg-indigo-500 
-                       hover:text-white hover:scale-105 transition-all"
-            variants={item}
-          >
-            📩 Contact Me
-          </motion.a>
+          
 
           {/* Download Resume */}
           <motion.a

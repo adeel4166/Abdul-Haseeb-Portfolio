@@ -53,7 +53,6 @@ export default function Skills() {
   const categories = ["All", "Game Dev", "Programming", "Tools", "Cloud"];
   const [selectedCategory, setSelectedCategory] = useState("All");
 
-
   const skills = [
     {
       name: "Unity Engine",
@@ -106,11 +105,9 @@ export default function Skills() {
     },
   ];
 
-  // Filter logic
+  // Filter logic without search
   const filteredSkills = skills.filter(
-    (skill) =>
-      (selectedCategory === "All" || skill.category === selectedCategory) &&
-      skill.name.toLowerCase().includes(search.toLowerCase())
+    (skill) => selectedCategory === "All" || skill.category === selectedCategory
   );
 
   return (
@@ -132,8 +129,6 @@ export default function Skills() {
           Skills
         </span>
       </motion.h2>
-
-    
 
       {/* Category Filter */}
       <div className="flex flex-wrap justify-center gap-3 mb-12">

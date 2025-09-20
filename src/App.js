@@ -7,6 +7,8 @@ import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import FloatingHireMeButton from "./components/FloatingHireMeButton";
+import "nprogress/nprogress.css";   // default styles
+import "./nprogress-custom.css";    // 👈 tumhara custom override
 
 function App() {
   const [activeSection, setActiveSection] = useState("home");

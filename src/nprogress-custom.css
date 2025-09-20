@@ -1,0 +1,26 @@
+/* Loading bar with neon gradient */
+#nprogress .bar {
+  height: 4px; /* thickness */
+  background: linear-gradient(90deg, #00f0ff, #ff00f7, #00ff85);
+  background-size: 300% 100%;
+  animation: neonGradient 2s linear infinite;
+  box-shadow: 0 0 10px #00f0ff, 0 0 20px #ff00f7, 0 0 30px #00ff85;
+  border-radius: 2px;
+}
+
+/* Optional: make spinner neon too */
+#nprogress .spinner-icon {
+  border-top-color: #ff00f7;
+  border-left-color: #00f0ff;
+  box-shadow: 0 0 8px #ff00f7, 0 0 12px #00f0ff;
+}
+
+/* Animate gradient */
+@keyframes neonGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}

@@ -74,10 +74,12 @@ export default function Hero({ setActiveSection }) {
             Game Developer
           </span>{" "}
           specialized in{" "}
-          <span className="text-purple-600 dark:text-purple-400">Unity & C#</span>
+          <span className="text-purple-600 dark:text-purple-400">
+            Unity & C#
+          </span>
           , creating{" "}
-          <span className="text-pink-600 dark:text-pink-400">2D/3D worlds</span>,
-          smooth{" "}
+          <span className="text-pink-600 dark:text-pink-400">2D/3D worlds</span>
+          , smooth{" "}
           <span className="text-green-600 dark:text-green-400">
             UI animations with DOTween
           </span>
@@ -106,16 +108,14 @@ export default function Hero({ setActiveSection }) {
             🎮 View My Games
           </motion.a>
 
-          
-
           {/* Download Resume */}
           <motion.a
-            href="/Resume.pdf"
-            download
+            href="/AbdulResume.pdf" // ✅ sirf file ka naam likho
+            download="AbdulResume.pdf"
             className="px-4 py-2 text-sm sm:px-6 sm:py-3 sm:text-base 
-                       bg-gradient-to-r from-green-400 via-emerald-500 to-teal-500 
-                       text-white rounded-lg font-[Poppins] font-medium shadow-md 
-                       transition-transform hover:scale-105 hover:shadow-lg"
+             bg-gradient-to-r from-green-400 via-emerald-500 to-teal-500 
+             text-white rounded-lg font-[Poppins] font-medium shadow-md 
+             transition-transform hover:scale-105 hover:shadow-lg"
             variants={item}
           >
             📄 Download Resume
@@ -133,7 +133,7 @@ export default function Hero({ setActiveSection }) {
           >
             <FaUnity />
           </motion.div>
-          
+
           <motion.div
             variants={item}
             className="text-gray-600 dark:text-white hover:text-pink-500 transition"

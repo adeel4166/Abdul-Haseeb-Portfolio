@@ -1,6 +1,7 @@
 "use client";
-import React from "react";
+import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
+import emailjs from "emailjs-com";
 import {
   Github,
   Linkedin,
@@ -8,23 +9,47 @@ import {
   MessageCircle,
   Mail,
   Phone,
+  CheckCircle,
 } from "lucide-react";
 
-// Animation Variants
-const container = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.08 },
-  },
-};
-
-const item = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.3 } },
-};
-
 export default function Contact() {
+  const formRef = useRef();
+  const [isSent, setIsSent] = useState(false);
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_0c8s1ya", // ✅ apna Service ID
+        "template_27sz6qd", // ✅ apna Template ID
+        formRef.current,
+        "x3hnknxKPDOPA5JPw" // ✅ apna Public Key
+      )
+      .then(
+        () => {
+          if (formRef.current) {
+            formRef.current.reset();
+          }
+
+          // 🔊 Play success sound
+          const audio = new Audio(
+            "https://actions.google.com/sounds/v1/cartoon/wood_plank_flicks.ogg"
+          );
+          audio.play();
+
+          setIsSent(true);
+
+          // 2 sec ke baad success hatado
+          setTimeout(() => setIsSent(false), 2000);
+        },
+        (error) => {
+          console.error("Message failed ❌", error.text);
+          alert("Failed to send message. Try again.");
+        }
+      );
+  };
+
   return (
     <section
       id="contact"
@@ -39,7 +64,8 @@ export default function Contact() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4 }}
       >
-        Get in <span className="text-indigo-500 dark:text-indigo-400">Touch</span>
+        Get in{" "}
+        <span className="text-indigo-500 dark:text-indigo-400">Touch</span>
       </motion.h2>
 
       <p className="text-gray-600 dark:text-gray-400 text-center mb-8 max-w-xl font-[Inter]">
@@ -47,98 +73,99 @@ export default function Contact() {
         friendly chat.
       </p>
 
-      {/* Social + Contact Icons */}
-      <motion.div
-        className="flex flex-wrap justify-center gap-6 mb-12 font-[Poppins]"
-        variants={container}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-      >
+      {/* Social Icons */}
+      <div className="flex flex-wrap justify-center gap-6 mb-12 font-[Poppins]">
         {[
-          { href: "mailto:abdulhaseeb0847179@gmail.com", icon: <Mail size={26} /> },
+          {
+            href: "mailto:abdulhaseeb0847179@gmail.com",
+            icon: <Mail size={26} />,
+          },
           { href: "tel:+923074058316", icon: <Phone size={26} /> },
-          { href: "https://www.facebook.com/share/1CNHJpcrZj/", icon: <Facebook size={26} /> },
-          { href: "https://wa.me/923074058316", icon: <MessageCircle size={26} /> },
+          {
+            href: "https://www.facebook.com/share/1CNHJpcrZj/",
+            icon: <Facebook size={26} />,
+          },
+          {
+            href: "https://wa.me/923074058316",
+            icon: <MessageCircle size={26} />,
+          },
           { href: "https://github.com/adeel4166", icon: <Github size={26} /> },
           {
             href: "https://www.linkedin.com/in/adeel-ahmad-639b852ab",
             icon: <Linkedin size={26} />,
           },
         ].map((social, i) => (
-          <motion.a
+          <a
             key={i}
             href={social.href}
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-indigo-500 dark:hover:text-indigo-400 transition transform hover:scale-125"
-            variants={item}
           >
             {social.icon}
-          </motion.a>
+          </a>
         ))}
-      </motion.div>
+      </div>
 
-      {/* Contact Form */}
-      <motion.form
-        className="space-y-6 
-        bg-white dark:bg-gradient-to-b dark:from-gray-950 dark:via-gray-900 dark:to-black 
-        backdrop-blur-md p-8 rounded-xl shadow-lg w-full max-w-lg 
-        font-[Poppins] transition-colors duration-500"
-        variants={container}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-      >
-        <motion.div variants={item}>
+      {/* Contact Form / Success Tick */}
+      {!isSent ? (
+        <form
+          ref={formRef}
+          onSubmit={sendEmail}
+          className="space-y-6 bg-white dark:bg-gradient-to-b dark:from-gray-950 dark:via-gray-900 dark:to-black 
+          backdrop-blur-md p-8 rounded-xl shadow-lg w-full max-w-lg font-[Poppins] transition-colors duration-500"
+        >
           <input
             type="text"
+            name="user_name"
             placeholder="Your Name"
-            className="w-full px-4 py-3 rounded-md 
-            bg-gray-50 dark:bg-gray-800 
-            text-gray-900 dark:text-white 
-            border border-gray-300 dark:border-gray-700 
-            focus:border-indigo-500 focus:ring focus:ring-indigo-400/50 outline-none transition"
+            required
+            className="w-full px-4 py-3 rounded-md bg-gray-50 dark:bg-gray-800 
+            text-gray-900 dark:text-white border border-gray-300 dark:border-gray-700 
+            focus:border-green-500 focus:ring focus:ring-green-400/50 outline-none transition"
           />
-        </motion.div>
 
-        <motion.div variants={item}>
           <input
             type="email"
+            name="user_email"
             placeholder="Your Email"
-            className="w-full px-4 py-3 rounded-md 
-            bg-gray-50 dark:bg-gray-800 
-            text-gray-900 dark:text-white 
-            border border-gray-300 dark:border-gray-700 
-            focus:border-indigo-500 focus:ring focus:ring-indigo-400/50 outline-none transition"
+            required
+            className="w-full px-4 py-3 rounded-md bg-gray-50 dark:bg-gray-800 
+            text-gray-900 dark:text-white border border-gray-300 dark:border-gray-700 
+            focus:border-green-500 focus:ring focus:ring-green-400/50 outline-none transition"
           />
-        </motion.div>
 
-        <motion.div variants={item}>
           <textarea
             rows="5"
+            name="message"
             placeholder="Your Message"
-            className="w-full px-4 py-3 rounded-md 
-            bg-gray-50 dark:bg-gray-800 
-            text-gray-900 dark:text-white 
-            border border-gray-300 dark:border-gray-700 
-            focus:border-indigo-500 focus:ring focus:ring-indigo-400/50 outline-none transition"
+            required
+            className="w-full px-4 py-3 rounded-md bg-gray-50 dark:bg-gray-800 
+            text-gray-900 dark:text-white border border-gray-300 dark:border-gray-700 
+            focus:border-green-500 focus:ring focus:ring-green-400/50 outline-none transition"
           ></textarea>
-        </motion.div>
 
-        <motion.button
-          type="submit"
-          className="w-full py-3 bg-gradient-to-r from-indigo-500 via-purple-600 to-pink-600 
-          text-white font-semibold rounded-lg shadow-md transition-all duration-300 
-          hover:scale-105 hover:shadow-xl"
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
+          <button
+            type="submit"
+            className="w-full py-3 bg-green-500 text-white font-semibold rounded-lg shadow-md transition-all duration-300 
+            hover:scale-105 hover:shadow-xl"
+          >
+            Send Message
+          </button>
+        </form>
+      ) : (
+        <motion.div
+          className="flex flex-col items-center justify-center text-center"
+          initial={{ opacity: 0, scale: 0.6 }}
+          animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.4, type: "spring" }}
-          viewport={{ once: true }}
         >
-          Send Message
-        </motion.button>
-      </motion.form>
+          <CheckCircle className="w-20 h-20 text-green-500 mb-4" />
+          <p className="text-lg font-semibold text-gray-800 dark:text-gray-200">
+            Message Sent Successfully!
+          </p>
+        </motion.div>
+      )}
     </section>
   );
 }

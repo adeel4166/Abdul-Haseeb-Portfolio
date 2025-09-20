@@ -37,7 +37,8 @@ export default function Footer({ setActiveSection }) {
         {/* Branding */}
         <motion.div className="space-y-4" variants={item}>
           <h2 className="text-2xl font-extrabold font-[Cinzel]">
-            <span className="text-indigo-600 dark:text-indigo-400">Abdul</span> Portfolio
+            <span className="text-indigo-600 dark:text-indigo-400">Abdul</span>{" "}
+            Portfolio
           </h2>
           <p className="text-gray-600 dark:text-gray-400 text-sm font-[Inter] leading-relaxed">
             Crafting immersive and high-performance games with a focus on
@@ -51,21 +52,32 @@ export default function Footer({ setActiveSection }) {
         <motion.div className="space-y-4 font-[Poppins]" variants={item}>
           <h3 className="font-semibold text-lg">Quick Links</h3>
           <ul className="space-y-2 text-gray-600 dark:text-gray-400">
-            {["Home", "About", "Skills", "Projects", "Contact"].map((link, i) => (
-              <motion.li
-                key={i}
-                whileHover={{ x: 5, color: "#818cf8" }}
-                transition={{ type: "spring", stiffness: 300 }}
-              >
-                {/* ✅ state-based navigation */}
-                <button
-                  onClick={() => setActiveSection(link.toLowerCase())}
-                  className="hover:text-indigo-600 dark:hover:text-indigo-400 transition"
+            {["Home", "About", "Skills", "Projects", "Contact"].map(
+              (link, i) => (
+                <motion.li
+                  key={i}
+                  whileHover={{ x: 5, color: "#818cf8" }}
+                  transition={{ type: "spring", stiffness: 300 }}
                 >
-                  {link}
-                </button>
-              </motion.li>
-            ))}
+                  <button
+                    onClick={() => {
+                      setActiveSection(link.toLowerCase());
+                      setTimeout(() => {
+                        const section = document.getElementById(
+                          link.toLowerCase()
+                        );
+                        if (section) {
+                          section.scrollIntoView({ behavior: "smooth" });
+                        }
+                      }, 100);
+                    }}
+                    className="hover:text-indigo-600 dark:hover:text-indigo-400 transition"
+                  >
+                    {link}
+                  </button>
+                </motion.li>
+              )
+            )}
           </ul>
         </motion.div>
 
@@ -77,12 +89,27 @@ export default function Footer({ setActiveSection }) {
           </p>
           <div className="flex flex-wrap gap-5">
             {[
-              { href: "mailto:abdulhaseeb0847179@gmail.com", icon: <Mail size={22} /> },
+              {
+                href: "mailto:abdulhaseeb0847179@gmail.com",
+                icon: <Mail size={22} />,
+              },
               { href: "tel:+923074058316", icon: <Phone size={22} /> },
-              { href: "https://wa.me/923074058316", icon: <MessageCircle size={22} /> },
-              { href: "https://github.com/adeel4166", icon: <Github size={22} /> },
-              { href: "https://www.linkedin.com/in/adeel-ahmad-639b852ab", icon: <Linkedin size={22} /> },
-              { href: "https://www.facebook.com/share/1CNHJpcrZj/", icon: <Facebook size={22} /> },
+              {
+                href: "https://wa.me/923074058316",
+                icon: <MessageCircle size={22} />,
+              },
+              {
+                href: "https://github.com/adeel4166",
+                icon: <Github size={22} />,
+              },
+              {
+                href: "https://www.linkedin.com/in/adeel-ahmad-639b852ab",
+                icon: <Linkedin size={22} />,
+              },
+              {
+                href: "https://www.facebook.com/share/1CNHJpcrZj/",
+                icon: <Facebook size={22} />,
+              },
             ].map((social, i) => (
               <motion.a
                 key={i}
@@ -100,7 +127,10 @@ export default function Footer({ setActiveSection }) {
           {/* Contact Info */}
           <div className="mt-4 text-sm text-gray-600 dark:text-gray-400 space-y-1 font-[Inter]">
             <p>
-              📍 <span className="text-gray-800 dark:text-gray-300">Lahore, Pakistan</span>
+              📍{" "}
+              <span className="text-gray-800 dark:text-gray-300">
+                Lahore, Pakistan
+              </span>
             </p>
             <p>
               📧{" "}
